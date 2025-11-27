@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Especia Norte — Pedidos mayoristas</title>
+  <meta name="description" content="Armá tu pedido mayorista de Especia Norte, elegí productos por categoría y envialo directo por WhatsApp." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <div class="logo-wrap">
+        <img src="img/logoEspeciaNorte.png" alt="Especia Norte" />
+      </div>
+      <div class="site-header-title">
+        <h1>Especia Norte — Pedidos</h1>
+        <p>Elegí las especias, hierbas, frutos secos y líneas cárnicas. Sumá cantidades y generá el pedido listo para enviar por WhatsApp.</p>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <h2>Categorías</h2>
+        <p class="muted">Filtrá por tipo de producto y luego ajustá cantidades.</p>
+        <div id="categoryList" class="cat-buttons"></div>
+      </aside>
+
+      <section class="content">
+        <section class="section-card products">
+          <div class="section-header">
+            <div>
+              <h2 id="currentCategoryName">Productos</h2>
+              <p class="muted">Usá los botones <strong>+</strong> y <strong>−</strong> para definir cuántas unidades querés de cada ítem.</p>
+            </div>
+          </div>
+          <div id="productList" class="product-list"></div>
+        </section>
+
+        <section class="section-card cart">
+          <div class="section-header">
+            <h2>Resumen del pedido</h2>
+            <button id="btnClearCart" type="button" class="btn btn-ghost">Vaciar carrito</button>
+          </div>
+
+          <ul id="cartList" class="cart-list"></ul>
+
+          <div class="cart-total-row">
+            <span>Total estimado:</span>
+            <strong id="cartTotal">$ 0,00</strong>
+          </div>
+
+          <section class="client">
+            <h3>Datos de contacto</h3>
+            <div class="form-row">
+              <label>
+                Nombre y apellido
+                <input id="inputName" type="text" placeholder="Ej: Esteban López" />
+              </label>
+              <label>
+                WhatsApp o email
+                <input id="inputEmail" type="text" placeholder="Ej: 381 000 0000 / correo@ejemplo.com" />
+              </label>
+            </div>
+            <label class="full">
+              Comentarios (opcional)
+              <textarea id="inputNotes" rows="3" placeholder="Horarios de contacto, observaciones de entrega, etc."></textarea>
+            </label>
+            <div class="btn-row">
+              <button id="btnWhatsApp" type="button" class="btn btn-primary">
+                Enviar pedido por WhatsApp
+              </button>
+              <p class="hint">Se abrirá WhatsApp con todo el detalle del pedido, precios por producto y total final.</p>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Especia Norte — Uso interno de lista mayorista.
+    </footer>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
