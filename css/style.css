@@ -12,15 +12,15 @@ html,body{
   padding:0;
 }
 
+/* ============================================================
+   BASE
+============================================================ */
 body{
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:#FFF7ED; /* crema pastel */
-  color:#3F3F46;      /* gris suave */
+  background:#F3F4F6;  /* gris muy claro */
+  color:#111827;       /* gris oscuro legible */
 }
 
-/* ============================================================
-   Layout general (MOBILE FIRST)
-============================================================ */
 .container{
   max-width:960px;
   margin:0 auto;
@@ -28,28 +28,27 @@ body{
 }
 
 /* ============================================================
-   HEADER + LOGO GRANDE
+   HEADER + LOGO
 ============================================================ */
 .site-header{
   display:flex;
   align-items:center;
-  gap:1.2rem;
-  margin-bottom:1.3rem;
-  padding:1rem .4rem;
-  background:#FEF3C7; /* pastel beige */
-  border-radius:20px;
-  box-shadow:0 12px 28px rgba(249,115,22,.25);
+  gap:1.4rem;
+  margin-bottom:1.4rem;
+  padding:1.1rem 1.2rem;
+  background:#FFFFFF;
+  border-radius:24px;
+  border:1px solid #E5E7EB;
+  box-shadow:0 10px 30px rgba(15,23,42,.06);
 }
 
-/* LOGO MUCHO MÁS GRANDE */
 .site-header .logo-wrap{
-  width:120px;
-  height:120px;
-  border-radius:26px;
+  width:100px;
+  height:100px;
+  border-radius:24px;
   padding:6px;
-  background:#FDBA74; /* naranja pastel */
-  background:linear-gradient(145deg,#FDBA74,#FB923C);
-  box-shadow:0 22px 40px rgba(248,113,113,.35);
+  background:linear-gradient(135deg,#FDBA74,#F97316);
+  box-shadow:0 14px 30px rgba(249,115,22,.35);
   flex-shrink:0;
 }
 
@@ -64,30 +63,30 @@ body{
 .site-header-title{
   display:flex;
   flex-direction:column;
-  gap:.25rem;
+  gap:.35rem;
 }
 
 .site-header-title h1{
   margin:0;
-  font-size:1.6rem; /* más grande */
+  font-size:1.8rem;
   font-weight:800;
-  color:#9A3412;   /* marrón cálido tipo especias */
+  color:#1F2937;
 }
 
 .site-header-title p{
   margin:0;
   font-size:.95rem;
-  color:#78350F;
+  color:#4B5563;
 }
 
 /* ============================================================
-   TARJETA PRINCIPAL QUE CONTIENE TODO
+   LAYOUT GENERAL
 ============================================================ */
 .layout{
-  background:#FFFFFF;
-  border-radius:18px;
-  padding:1rem;
-  box-shadow:0 20px 50px rgba(249,115,22,.25);
+  background:transparent;
+  border-radius:0;
+  padding:0;
+  box-shadow:none;
   display:flex;
   flex-direction:column;
   gap:1rem;
@@ -100,103 +99,113 @@ body{
 }
 
 /* ============================================================
-   CATEGORÍAS (Mobile-first)
+   ACCIONES CENTRALES (PDF + WHATSAPP)
 ============================================================ */
-.sidebar{
-  border-radius:16px;
-  background:#FFF7ED;
-  padding:.8rem;
-  color:#7C2D12;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+.top-actions{
+  margin:.9rem 0 1rem;
 }
 
-.sidebar h2{
-  margin:0 0 .3rem;
-  font-size:1rem;
-  color:#9A3412;
-}
-
-.sidebar .muted{
-  margin:0 0 .55rem;
-  font-size:.78rem;
-  color:#A16207;
-}
-
-/* CARRUSEL HORIZONTAL */
-.cat-buttons{
+.top-actions-inner{
   display:flex;
-  flex-wrap:nowrap;
-  gap:.45rem;
-  overflow-x:auto;
-  padding:.1rem 0;
-  scrollbar-width:none;
-}
-.cat-buttons::-webkit-scrollbar{
-  display:none;
+  flex-direction:column;
+  gap:.5rem;
+  align-items:stretch;
 }
 
-.cat-btn{
-  flex:0 0 auto;
-  border-radius:999px;
-  border:1px solid #FCD34D;
-  background:#FEF3C7;
-  color:#9A3412;
-  padding:.45rem .9rem;
-  font-size:.8rem;
-  cursor:pointer;
-  white-space:nowrap;
-  display:flex;
-  align-items:center;
-  gap:.35rem;
-  transition:all .15s ease;
-}
+/* Desktop: botones al lado */
+@media (min-width:700px){
+  .top-actions-inner{
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+  }
 
-.cat-btn:hover{
-  background:#FDE68A;
-  transform:translateY(-1px);
-  box-shadow:0 10px 20px rgba(251,191,36,.35);
-}
-
-.cat-btn.active{
-  background:#FB923C;
-  color:#FFF7ED;
-  border-color:#F97316;
-  box-shadow:0 0 0 2px rgba(249,115,22,.6);
+  .top-actions .btn{
+    min-width:250px;
+  }
 }
 
 /* ============================================================
-   SECCIONES Y CARDS
+   CARDS GENERALES
 ============================================================ */
 .section-card{
   background:#FFFFFF;
-  border-radius:16px;
-  padding:1rem;
-  box-shadow:0 12px 28px rgba(0,0,0,.08);
+  border-radius:18px;
+  padding:1rem 1.1rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.05);
+  border:1px solid #E5E7EB;
 }
 
 .section-header{
   display:flex;
-  align-items:flex-start;
+  flex-wrap:wrap;
+  align-items:flex-end;
   justify-content:space-between;
-  gap:.5rem;
-  margin-bottom:.7rem;
+  gap:.9rem;
+  margin-bottom:1rem;
 }
 
 .section-header h2{
   margin:0;
-  font-size:1rem;
-  color:#9A3412;
+  font-size:1.05rem;
+  color:#111827;
 }
 
 .section-header p{
-  margin:0;
-  font-size:.8rem;
-  color:#7C2D12;
+  margin:.15rem 0 0;
+  font-size:.82rem;
+  color:#6B7280;
 }
 
 .muted{
-  color:#a16207;
+  color:#6B7280;
   font-size:.8rem;
+}
+
+/* ============================================================
+   BUSCADOR (CTA PRINCIPAL)
+============================================================ */
+.search-bar{
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  width:100%;
+  max-width:320px;
+  background:#DCFCE7;         /* verde suave */
+  border-radius:999px;
+  padding:.4rem .6rem;
+  border:1px solid #86EFAC;
+}
+
+.search-label{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  color:#0F766E;
+}
+
+.search-bar input{
+  border-radius:999px;
+  border:none;
+  padding:.3rem .2rem .1rem;
+  font-size:.86rem;
+  background:transparent;
+  color:#0F172A;
+}
+
+.search-bar input::placeholder{
+  color:#94A3B8;
+}
+
+.search-bar input:focus{
+  outline:none;
+}
+
+/* En pantallas grandes se alinea a la derecha */
+@media (min-width:700px){
+  .search-bar{
+    margin-left:auto;
+  }
 }
 
 /* ============================================================
@@ -205,44 +214,50 @@ body{
 .products .product-list{
   display:flex;
   flex-direction:column;
-  gap:.7rem;
+  gap:.6rem;
 }
 
 .product-row{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:.7rem;
-  padding:.75rem .7rem;
-  border-radius:14px;
-  background:#FFFBEB;
-  border:1px solid #FDE68A;
-  box-shadow:0 4px 14px rgba(253,230,138,.45);
+  gap:.75rem;
+  padding:.7rem .8rem;
+  border-radius:12px;
+  background:#FFFFFF;
+  border:1px solid #E5E7EB;
+  transition:box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+}
+
+.product-row:hover{
+  border-color:#D1D5DB;
+  box-shadow:0 6px 18px rgba(15,23,42,.06);
+  transform:translateY(-1px);
 }
 
 .product-main{
   display:flex;
   flex-direction:column;
-  gap:.15rem;
+  gap:.2rem;
 }
 
 .product-main h3{
   margin:0;
   font-size:.95rem;
-  color:#7C2D12;
+  color:#111827;
 }
 
 .product-unit{
   margin:0;
   font-size:.78rem;
-  color:#A16207;
+  color:#6B7280;
 }
 
 .product-price{
   margin:0;
   font-size:.9rem;
   font-weight:700;
-  color:#B45309;
+  color:#16A34A; /* verde para precio */
 }
 
 /* Cantidades */
@@ -250,18 +265,18 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:.3rem;
+  gap:.25rem;
 }
 
 .qty-btn{
-  width:34px;
-  height:34px;
+  width:32px;
+  height:32px;
   border-radius:999px;
-  border:1px solid #FDE68A;
-  background:#FFF7ED;
-  color:#9A3412;
+  border:1px solid #D1D5DB;
+  background:#F9FAFB;
+  color:#111827;
   cursor:pointer;
-  font-size:1.15rem;
+  font-size:1.1rem;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -269,25 +284,19 @@ body{
 }
 
 .qty-btn:hover{
-  background:#FCD34D;
-  box-shadow:0 8px 18px rgba(251,191,36,.45);
-  transform:translateY(-1px);
+  background:#E5E7EB;
 }
 
 .qty-label{
   min-width:26px;
   text-align:center;
   font-size:.85rem;
-  color:#9A3412;
+  color:#111827;
 }
 
 /* ============================================================
-   CARRITO (alineado y limpio)
+   CARRITO
 ============================================================ */
-.cart .section-header h2{
-  color:#9A3412;
-}
-
 .cart-list{
   list-style:none;
   margin:0 0 .9rem;
@@ -303,9 +312,9 @@ body{
   align-items:center;
   gap:.5rem;
   padding:.6rem .7rem;
-  border-radius:12px;
-  background:#FFF7ED;
-  border:1px solid #FDE68A;
+  border-radius:10px;
+  background:#F9FAFB;
+  border:1px solid #E5E7EB;
 }
 
 .cart-main{
@@ -317,13 +326,13 @@ body{
 
 .cart-main strong{
   font-size:.9rem;
-  color:#7C2D12;
+  color:#111827;
 }
 
 .cart-cat,
 .cart-unit{
   font-size:.76rem;
-  color:#A16207;
+  color:#6B7280;
 }
 
 .cart-side{
@@ -341,12 +350,12 @@ body{
 
 .cart-subtotal{
   font-weight:700;
-  color:#65A30D;
+  color:#16A34A;
 }
 
 .cart-empty{
   font-size:.8rem;
-  color:#9ca3af;
+  color:#9CA3AF;
 }
 
 /* Total */
@@ -354,21 +363,21 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:#FB923C;
+  background:#0F766E;
   padding:.65rem .9rem;
   border-radius:12px;
   margin-top:.6rem;
   color:white;
-  font-size:1rem;
+  font-size:.98rem;
   font-weight:700;
-  box-shadow:0 10px 18px rgba(249,115,22,.4);
+  box-shadow:0 8px 20px rgba(15,118,110,.45);
 }
 
 /* ============================================================
-   FORMULARIO (ordenado mobile-first)
+   FORMULARIO
 ============================================================ */
 .client{
-  border-top:1px dashed #FCD34D;
+  border-top:1px dashed #E5E7EB;
   margin-top:1.1rem;
   padding-top:.9rem;
 }
@@ -376,7 +385,7 @@ body{
 .client h3{
   margin:.1rem 0 .6rem;
   font-size:.95rem;
-  color:#9A3412;
+  color:#111827;
 }
 
 .form-row{
@@ -395,26 +404,26 @@ body{
 
 label{
   font-size:.8rem;
-  color:#7C2D12;
+  color:#374151;
 }
 
 input[type="text"],
 textarea{
   width:100%;
   border-radius:10px;
-  border:1px solid #FCD34D;
+  border:1px solid #D1D5DB;
   padding:.55rem .7rem;
   font-size:.88rem;
-  background:#FEF3C7;
-  color:#7C2D12;
+  background:#F9FAFB;
+  color:#111827;
   resize:vertical;
 }
 
 input[type="text"]:focus,
 textarea:focus{
-  outline:2px solid #FB923C;
+  outline:2px solid #0F766E;
   outline-offset:1px;
-  background:#FFFBEB;
+  background:#FFFFFF;
 }
 
 textarea{
@@ -428,12 +437,15 @@ textarea{
   margin-top:.5rem;
 }
 
+/* ============================================================
+   BOTONES
+============================================================ */
 .btn{
   border-radius:999px;
   border:none;
-  padding:.8rem 1.3rem;
-  font-size:.95rem;
-  font-weight:700;
+  padding:.75rem 1.3rem;
+  font-size:.9rem;
+  font-weight:600;
   cursor:pointer;
   display:inline-flex;
   align-items:center;
@@ -444,38 +456,61 @@ textarea{
 
 /* Enviar por WhatsApp */
 .btn-primary{
-  background:linear-gradient(135deg,#22C55E,#16A34A);
-  color:#FEF3C7;
-  box-shadow:0 12px 30px rgba(34,197,94,.45);
+  background:#16A34A;
+  color:#F9FAFB;
+  box-shadow:0 10px 24px rgba(22,163,74,.45);
 }
 
 .btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 18px 40px rgba(34,197,94,.7);
+  transform:translateY(-1px);
+  box-shadow:0 14px 32px rgba(22,163,74,.6);
 }
 
 .btn-ghost{
-  background:#FFEDD5;
-  color:#9A3412;
-  border:1px solid #FDBA74;
+  background:#FFFFFF;
+  color:#111827;
+  border:1px solid #E5E7EB;
 }
 
 .btn-ghost:hover{
-  background:#FCD34D;
+  background:#F3F4F6;
 }
 
 .hint{
   margin:.1rem 0 0;
   font-size:.76rem;
-  color:#a16207;
+  color:#6B7280;
 }
 
-/* Footer */
+.btn-sm{
+  padding:.4rem .9rem;
+  font-size:.8rem;
+}
+
+/* ============================================================
+   PAGINADO
+============================================================ */
+.pagination{
+  margin-top:.9rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+}
+
+.page-info{
+  font-size:.82rem;
+  color:#6B7280;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
 .footer{
   text-align:center;
   margin-top:1rem;
   font-size:.78rem;
-  color:#9A3412;
+  color:#6B7280;
 }
 
 /* ============================================================
@@ -484,19 +519,14 @@ textarea{
 @media (min-width: 900px){
   .layout{
     display:grid;
-    grid-template-columns:260px minmax(0,1fr);
-    gap:1rem;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap:1.2rem;
   }
 
   .products .product-list{
     max-height:460px;
     overflow-y:auto;
     padding-right:.4rem;
-  }
-
-  .sidebar{
-    position:sticky;
-    top:1.2rem;
   }
 
   .form-row{
@@ -511,33 +541,5 @@ textarea{
   .btn-row{
     flex-direction:row;
     align-items:center;
-  }
-}
-
-
-/* ============================================================
-   ACCIONES CENTRALES (PDF + WHATSAPP)
-============================================================ */
-.top-actions{
-  margin: .9rem 0 1rem;
-}
-
-.top-actions-inner{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-  align-items:stretch;
-}
-
-/* En desktop que queden al lado */
-@media (min-width: 700px){
-  .top-actions-inner{
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-  }
-
-  .top-actions .btn{
-    min-width:250px;
   }
 }

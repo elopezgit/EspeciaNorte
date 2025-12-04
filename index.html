@@ -46,62 +46,80 @@
 <!-- 🔹 FIN SECCIÓN NUEVA -->
 
     <main class="layout">
-      <aside class="sidebar">
-        <h2>Categorías</h2>
-        <p class="muted">Filtrá por tipo de producto y luego ajustá cantidades.</p>
-        <div id="categoryList" class="cat-buttons"></div>
-      </aside>
+  <section class="content">
+    <section class="section-card products">
+      <div class="section-header">
+        <div>
+          <h2 id="currentCategoryName">Productos</h2>
+          <p class="muted">
+            Usá los botones <strong>+</strong> y <strong>−</strong> para definir cuántas unidades querés de cada ítem.
+          </p>
+        </div>
 
-      <section class="content">
-        <section class="section-card products">
-          <div class="section-header">
-            <div>
-              <h2 id="currentCategoryName">Productos</h2>
-              <p class="muted">Usá los botones <strong>+</strong> y <strong>−</strong> para definir cuántas unidades querés de cada ítem.</p>
-            </div>
-          </div>
-          <div id="productList" class="product-list"></div>
-        </section>
+        <!-- 🔍 Buscador central -->
+        <div class="search-bar">
+          <label>
+            <span class="search-label">Buscar producto o código</span>
+            <input 
+              id="searchInput" 
+              type="text" 
+              placeholder="Ej: COMINO, PIMENTON, HILO, ESN-..."
+            />
+          </label>
+        </div>
+      </div>
 
-        <section class="section-card cart">
-          <div class="section-header">
-            <h2>Resumen del pedido</h2>
-            <button id="btnClearCart" type="button" class="btn btn-ghost">Vaciar carrito</button>
-          </div>
+      <!-- Lista de productos (una sola lista, sin categorías) -->
+      <div id="productList" class="product-list"></div>
 
-          <ul id="cartList" class="cart-list"></ul>
+      <!-- 🔢 Paginado -->
+      <div id="pagination" class="pagination">
+        <button id="prevPage" type="button" class="btn btn-ghost btn-sm">⬅ Anterior</button>
+        <span id="pageInfo" class="page-info">Página 1 de 1</span>
+        <button id="nextPage" type="button" class="btn btn-ghost btn-sm">Siguiente ➡</button>
+      </div>
+    </section>
 
-          <div class="cart-total-row">
-            <span>Total estimado:</span>
-            <strong id="cartTotal">$ 0,00</strong>
-          </div>
+    <section class="section-card cart">
+      <div class="section-header">
+        <h2>Resumen del pedido</h2>
+        <button id="btnClearCart" type="button" class="btn btn-ghost">Vaciar carrito</button>
+      </div>
 
-          <section class="client">
-            <h3>Datos de contacto</h3>
-            <div class="form-row">
-              <label>
-                Nombre y apellido
-                <input id="inputName" type="text" placeholder="Ej: Esteban López" />
-              </label>
-              <label>
-                WhatsApp o email
-                <input id="inputEmail" type="text" placeholder="Ej: 381 000 0000 / correo@ejemplo.com" />
-              </label>
-            </div>
-            <label class="full">
-              Comentarios (opcional)
-              <textarea id="inputNotes" rows="3" placeholder="Horarios de contacto, observaciones de entrega, etc."></textarea>
-            </label>
-            <div class="btn-row">
-              <button id="btnWhatsApp" type="button" class="btn btn-primary">
-                Enviar pedido por WhatsApp
-              </button>
-              <p class="hint">Se abrirá WhatsApp con todo el detalle del pedido, precios por producto y total final.</p>
-            </div>
-          </section>
-        </section>
+      <ul id="cartList" class="cart-list"></ul>
+
+      <div class="cart-total-row">
+        <span>Total estimado:</span>
+        <strong id="cartTotal">$ 0,00</strong>
+      </div>
+
+      <section class="client">
+        <h3>Datos de contacto</h3>
+        <div class="form-row">
+          <label>
+            Nombre y apellido
+            <input id="inputName" type="text" placeholder="Ej: Esteban López" />
+          </label>
+          <label>
+            WhatsApp o email
+            <input id="inputEmail" type="text" placeholder="Ej: 381 000 0000 / correo@ejemplo.com" />
+          </label>
+        </div>
+        <label class="full">
+          Comentarios (opcional)
+          <textarea id="inputNotes" rows="3" placeholder="Horarios de contacto, observaciones de entrega, etc."></textarea>
+        </label>
+        <div class="btn-row">
+          <button id="btnWhatsApp" type="button" class="btn btn-primary">
+            Enviar pedido por WhatsApp
+          </button>
+          <p class="hint">Se abrirá WhatsApp con todo el detalle del pedido, precios por producto y total final.</p>
+        </div>
       </section>
-    </main>
+    </section>
+  </section>
+</main>
+
 
     <footer class="footer">
       © <span id="year"></span> Especia Norte — Uso interno de lista mayorista.
