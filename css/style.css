@@ -654,3 +654,61 @@ a.btn {
     box-shadow: 0 0 0 0 rgba(37,211,102,0);
   }
 }
+
+
+/* ============================================================
+   CATEGORÍAS VISUALES – BUBBLES
+============================================================ */
+
+.category-bubbles{
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.section-title{
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.bubbles-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.2rem;
+  justify-items: center;
+}
+
+.bubble-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.bubble-img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.bubble-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bubble-card span{
+  margin-top: .6rem;
+  font-size: .95rem;
+  color: #111827;
+}
+
+/* Hover sutil */
+.bubble-card:hover .bubble-img{
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 30px rgba(0,0,0,.15);
+}
