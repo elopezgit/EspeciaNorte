@@ -563,3 +563,56 @@ a.btn {
     min-width: 250px;
   }
 }
+
+
+.mini-showcase{
+  margin-top: 1rem;
+}
+
+.mini-card{
+  background:#fff;
+  border:1px solid #E5E7EB;
+  border-radius:24px;
+  padding:1.2rem 1.2rem 1rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.mini-card h2{
+  margin:0 0 .3rem;
+  font-size:1.15rem;
+}
+
+.mini-card .muted{
+  margin:.2rem 0 1rem;
+  color:#6B7280;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-bottom: 1rem;
+}
+
+.chip{
+  padding:.45rem .7rem;
+  border-radius:999px;
+  background:#F3F4F6;
+  border:1px solid #E5E7EB;
+  font-size:.95rem;
+  color:#111827;
+}
+
+.mini-features{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+
+.mini-feature{
+  padding:.55rem .8rem;
+  border-radius:14px;
+  background:#FAFAFA;
+  border:1px solid #E5E7EB;
+  font-size:.95rem;
+}
