@@ -616,3 +616,41 @@ a.btn {
   border:1px solid #E5E7EB;
   font-size:.95rem;
 }
+
+
+/* ============================================================
+   BOTONES – MICRO ANIMACIONES
+============================================================ */
+
+.btn{
+  transition: 
+    transform .25s ease,
+    box-shadow .25s ease,
+    background-color .25s ease;
+}
+
+/* Hover general */
+.btn:hover{
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0,0,0,.18);
+}
+
+/* WhatsApp – pulso suave constante */
+.btn-primary{
+  animation: pulseWhatsapp 2.8s infinite;
+}
+
+@keyframes pulseWhatsapp{
+  0%{
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37,211,102,.55);
+  }
+  70%{
+    transform: scale(1.04);
+    box-shadow: 0 0 0 12px rgba(37,211,102,0);
+  }
+  100%{
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37,211,102,0);
+  }
+}
