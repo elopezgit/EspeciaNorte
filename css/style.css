@@ -712,3 +712,91 @@ a.btn {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 16px 30px rgba(0,0,0,.15);
 }
+
+
+/* ============================================================
+   BOTÓN CATÁLOGO – MÁS LLAMATIVO (SIN SER GRITÓN)
+============================================================ */
+
+.btn-catalogo{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(249,115,22,.35);
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,247,237,1));
+  box-shadow: 0 10px 24px rgba(249,115,22,.18);
+}
+
+/* Gradiente animado suave */
+.btn-catalogo::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(
+    90deg,
+    rgba(249,115,22,.0),
+    rgba(249,115,22,.25),
+    rgba(16,185,129,.18),
+    rgba(249,115,22,.0)
+  );
+  transform: translateX(-120%);
+  animation: catalogGlow 3.2s ease-in-out infinite;
+}
+
+/* Brillo tipo “shimmer” */
+.btn-catalogo::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-60%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,.55),
+    rgba(255,255,255,0)
+  );
+  transform: rotate(20deg);
+  animation: catalogShimmer 4.5s ease-in-out infinite;
+  opacity: .65;
+}
+
+/* Mantener texto arriba del efecto */
+.btn-catalogo{
+  z-index: 0;
+}
+.btn-catalogo > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover más divertido */
+.btn-catalogo:hover{
+  border-color: rgba(249,115,22,.55);
+  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,237,213,1));
+  box-shadow: 0 16px 34px rgba(249,115,22,.25);
+}
+
+/* Animaciones */
+@keyframes catalogGlow{
+  0%   { transform: translateX(-120%); opacity: .0; }
+  30%  { opacity: .9; }
+  55%  { opacity: .6; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+
+@keyframes catalogShimmer{
+  0%   { left:-60%; opacity: 0; }
+  20%  { opacity: .55; }
+  50%  { left:120%; opacity: 0; }
+  100% { left:120%; opacity: 0; }
+}
+
+/* Respeta usuarios con "reducir movimiento" */
+@media (prefers-reduced-motion: reduce){
+  .btn-catalogo::before,
+  .btn-catalogo::after{
+    animation: none;
+  }
+}
+
