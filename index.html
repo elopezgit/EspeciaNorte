@@ -3,192 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Especia Norte — Pedidos mayoristas</title>
-  <meta name="description" content="Armá tu pedido mayorista de Especia Norte, elegí productos por categoría y envialo directo por WhatsApp." />
+  <title>Especia Norte — Catálogo Mayorista</title>
+  <meta name="description" content="Descargá nuestro catálogo y hacé tu pedido mayorista de especias y condimentos en Especia Norte." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
   <div class="container">
+    
     <header class="site-header">
       <div class="logo-wrap">
-        <img src="img/logoEspeciaNorte.png" alt="Especia Norte" />
+        <img src="img/logoEspeciaNorte.png" alt="Especia Norte Logo" />
       </div>
       <div class="site-header-title">
-        <h1>Especia Norte</h1><br>
-        
-        <p>
-          Descargá nuestro catálogo y escribinos por WhatsApp para armar tu pedido.
-        </p>
-
-
+        <h1>Especia Norte</h1>
+        <p class="subtitle">Sabor y Calidad Mayorista • Tucumán</p>
       </div>
     </header>
 
- <!-- 🔹 NUEVA SECCIÓN DE ACCIONES CENTRALES -->
-    <section class="top-actions">
-      <div class="top-actions-inner">
+    <section class="hero-actions">
+      
+      <div class="action-card">
+        <div class="action-icon">📂</div>
+        <h2>Lista de Precios</h2>
+        <p>Descargá nuestro catálogo actualizado en PDF con todos nuestros productos y ofertas.</p>
         <a 
-          href="pdf/EspeciaNorteCatalogo.pdf" 
+          href="pdf/Lista_Precios_Especia_Norte.pdf" 
           target="_blank" 
           rel="noopener" 
-          class="btn btn-ghost"
+          class="btn-catalog"
         >
-          📄 Ver catálogo en PDF
-        </a>
-
-        <a
-          href="https://wa.me/5493813159106?text=Hola%20Especia%20Norte%2C%20quiero%20hacer%20un%20pedido%20personalizado%20y%20consultar%20precios."
-          target="_blank"
-          rel="noopener"
-          class="btn btn-primary"
-        >
-          💬 Pedir por WhatsApp
+          📥 DESCARGAR CATÁLOGO
         </a>
       </div>
-    </section>
-    <!-- 🔹 FIN SECCIÓN NUEVA -->
 
-
-
-<!-- ====== SISTEMA DE PEDIDOS (OCULTO) ======
-  <main class="layout">
-  <section class="content">
-    <section class="section-card products">
-      <div class="section-header">
-        <div>
-          <h2 id="currentCategoryName">Productos</h2>
-          <p class="muted">
-            Usá los botones <strong>+</strong> y <strong>−</strong> para definir cuántas unidades querés de cada ítem.
-          </p>
+      <div class="action-card">
+        <div class="action-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" width="45">
         </div>
-
-        
-        <div class="search-bar">
-          <label>
-            <span class="search-label">Buscar producto o código</span>
-            <input 
-              id="searchInput" 
-              type="text" 
-              placeholder="Ej: COMINO, PIMENTON, HILO, ESN-..."
-            />
-          </label>
-        </div>
+        <h2>Pedidos y Consultas</h2>
+        <p>Escribinos directamente para armar tu pedido personalizado o sacarte cualquier duda.</p>
+        <a 
+          href="https://wa.me/5493814767643?text=%F0%9F%8C%B6%EF%B8%8F%20%C2%A1Hola%20Especia%20Norte!%20%0A%0A%F0%9F%93%9D%20Me%20gustar%C3%ADa%20hacer%20un%20pedido%20mayorista.%20%C2%BFPodr%C3%ADan%20enviarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20stock%20y%20m%C3%A9todos%20de%20env%C3%ADo%3F%20%0A%0A%E2%9C%A8%20Muchas%20gracias." 
+          target="_blank" 
+          rel="noopener" 
+          class="btn-whatsapp"
+        >
+          💬 ENVIAR WHATSAPP
+        </a>
       </div>
 
-      
-      <div id="productList" class="product-list"></div>
-
-      
-      <div id="pagination" class="pagination">
-        <button id="prevPage" type="button" class="btn btn-ghost btn-sm">⬅ Anterior</button>
-        <span id="pageInfo" class="page-info">Página 1 de 1</span>
-        <button id="nextPage" type="button" class="btn btn-ghost btn-sm">Siguiente ➡</button>
-      </div>
     </section>
 
-    <section class="section-card cart">
-      <div class="section-header">
-        <h2>Resumen del pedido</h2>
-        <button id="btnClearCart" type="button" class="btn btn-ghost">Vaciar carrito</button>
-      </div>
+    <section class="category-section">
+      <h2 class="section-title">Nuestras Líneas</h2>
 
-      <ul id="cartList" class="cart-list"></ul>
+      <div class="bubbles-grid">
 
-      <div class="cart-total-row">
-        <span>Total estimado:</span>
-        <strong id="cartTotal">$ 0,00</strong>
-      </div>
-
-      <section class="client">
-        <h3>Datos de contacto</h3>
-        <div class="form-row">
-          <label>
-            Nombre y apellido
-            <input id="inputName" type="text" placeholder="Ej: Esteban López" />
-          </label>
-          <label>
-            WhatsApp o email
-            <input id="inputEmail" type="text" placeholder="Ej: 381 000 0000 / correo@ejemplo.com" />
-          </label>
+        <div class="bubble-card">
+          <div class="bubble-img">
+            <img src="img/especias.jfif" alt="Especias" />
+          </div>
+          <span>Especias</span>
         </div>
-        <label class="full">
-          Comentarios (opcional)
-          <textarea id="inputNotes" rows="3" placeholder="Horarios de contacto, observaciones de entrega, etc."></textarea>
-        </label>
-        <div class="btn-row">
-          <button id="btnWhatsApp" type="button" class="btn btn-primary">
-            Enviar pedido por WhatsApp
-          </button>
-          <p class="hint">Se abrirá WhatsApp con todo el detalle del pedido, precios por producto y total final.</p>
+
+        <div class="bubble-card">
+          <div class="bubble-img">
+            <img src="img/condimentos.jfif" alt="Condimentos" />
+          </div>
+          <span>Condimentos</span>
         </div>
-      </section>
+
+        <div class="bubble-card">
+          <div class="bubble-img">
+            <img src="img/mezclas.jfif" alt="Mezclas" />
+          </div>
+          <span>Mezclas</span>
+        </div>
+
+        <div class="bubble-card">
+          <div class="bubble-img">
+            <img src="img/dulcebatata.jpg" alt="Dulces" />
+          </div>
+          <span>Dulces</span>
+        </div>
+
+        <div class="bubble-card">
+          <div class="bubble-img">
+            <img src="img/aceitunas.webp" alt="Aceitunas" />
+          </div>
+          <span>Aceitunas</span>
+        </div>
+
+        <div class="bubble-card">
+          <div class="bubble-img">
+            <img src="img/tripas.jfif" alt="Tripas" />
+          </div>
+          <span>Tripas</span>
+        </div>
+
+      </div>
     </section>
-  </section>
-</main>
-====== FIN SISTEMA DE PEDIDOS ====== -->
-
-
-
-
-<!-- 🔸 CATEGORÍAS VISUALES -->
-<section class="category-bubbles">
-  <h2 class="section-title">Nuestros productos</h2>
-
-  <div class="bubbles-grid">
-
-    <div class="bubble-card">
-      <div class="bubble-img">
-        <img src="img/especias.jfif" alt="Especias" />
-      </div>
-      <span>Especias</span>
-    </div>
-
-    <div class="bubble-card">
-      <div class="bubble-img">
-        <img src="img/condimentos.jfif" alt="Condimentos" />
-      </div>
-      <span>Condimentos</span>
-    </div>
-
-    <div class="bubble-card">
-      <div class="bubble-img">
-        <img src="img/mezclas.jfif" alt="Mezclas" />
-      </div>
-      <span>Mezclas</span>
-    </div>
-
-    <div class="bubble-card">
-      <div class="bubble-img">
-        <img src="img/dulcebatata.jpg" alt="Aceitunas" />
-      </div>
-      <span>Dulce de Batata & Membrillos</span>
-    </div>
-
-    <div class="bubble-card">
-      <div class="bubble-img">
-        <img src="img/aceitunas.webp" alt="Aceitunas" />
-      </div>
-      <span>Aceitunas</span>
-    </div>
-
-    <div class="bubble-card">
-      <div class="bubble-img">
-        <img src="img/tripas.jfif" alt="Tripas" />
-      </div>
-      <span>Tripas</span>
-    </div>
-
-
-  </div>
-
-</section>
-
 
     <footer class="footer">
-      © <span id="year"></span> Especia Norte.
+      <p>© <span id="year"></span> Especia Norte — San Miguel de Tucumán</p>
     </footer>
+
   </div>
 
+  <script>
+    // Script simple para actualizar el año en el footer automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,802 +1,217 @@
 /* ============================================================
-   RESET
+   PALETA DE COLORES "TIERRA Y FUEGO"
 ============================================================ */
-*,
-*::before,
-*::after{
-  box-sizing:border-box;
+:root {
+  --accent-orange: #FF6B00;    /* Naranja Especia Vibrante */
+  --deep-black: #1A1A1A;       /* Negro Elegante */
+  --whatsapp-green: #25D366;
+  --bg-gradient: linear-gradient(135deg, #ffffff 0%, #fff5ed 100%);
+  --glass: rgba(255, 255, 255, 0.8);
 }
 
-html,body{
-  margin:0;
-  padding:0;
+* { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--deep-black);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
 }
 
 /* ============================================================
-   BASE
+   HEADER CON ESTILO MODERNO
 ============================================================ */
-body{
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:#F3F4F6;  /* gris muy claro */
-  color:#111827;       /* gris oscuro legible */
-}
-
-.container{
-  max-width:960px;
-  margin:0 auto;
-  padding:1rem .9rem 1.5rem;
-}
-
-/* ============================================================
-   HEADER + LOGO
-============================================================ */
-.site-header{
-  display:flex;
-  align-items:center;
-  gap:1.4rem;
-  margin-bottom:1.4rem;
-  padding:1.1rem 1.2rem;
-  background:#FFFFFF;
-  border-radius:24px;
-  border:1px solid #E5E7EB;
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
-}
-
-.site-header .logo-wrap{
-  width:100px;
-  height:100px;
-  border-radius:24px;
-  padding:6px;
-  background:linear-gradient(135deg,#FDBA74,#F97316);
-  box-shadow:0 14px 30px rgba(249,115,22,.35);
-  flex-shrink:0;
-}
-
-.site-header .logo-wrap img{
-  width:100%;
-  height:100%;
-  border-radius:20px;
-  object-fit:cover;
-  background:#FFF;
-}
-
-.site-header-title{
-  display:flex;
-  flex-direction:column;
-  gap:.35rem;
-}
-
-.site-header-title h1{
-  margin:0;
-  font-size:1.8rem;
-  font-weight:800;
-  color:#1F2937;
-}
-
-.site-header-title p{
-  margin:0;
-  font-size:.95rem;
-  color:#4B5563;
-}
-
-/* ============================================================
-   LAYOUT GENERAL
-============================================================ */
-.layout{
-  background:transparent;
-  border-radius:0;
-  padding:0;
-  box-shadow:none;
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-}
-
-.content{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-}
-
-/* ============================================================
-   ACCIONES CENTRALES (PDF + WHATSAPP)
-============================================================ */
-.top-actions{
-  margin:.9rem 0 1rem;
-}
-
-.top-actions-inner{
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-  align-items:stretch;
-}
-
-/* Desktop: botones al lado */
-@media (min-width:700px){
-  .top-actions-inner{
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-  }
-
-  .top-actions .btn{
-    min-width:250px;
-  }
-}
-
-/* ============================================================
-   CARDS GENERALES
-============================================================ */
-.section-card{
-  background:#FFFFFF;
-  border-radius:18px;
-  padding:1rem 1.1rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.05);
-  border:1px solid #E5E7EB;
-}
-
-.section-header{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:.9rem;
-  margin-bottom:1rem;
-}
-
-.section-header h2{
-  margin:0;
-  font-size:1.05rem;
-  color:#111827;
-}
-
-.section-header p{
-  margin:.15rem 0 0;
-  font-size:.82rem;
-  color:#6B7280;
-}
-
-.muted{
-  color:#6B7280;
-  font-size:.8rem;
-}
-
-/* ============================================================
-   BUSCADOR (CTA PRINCIPAL)
-============================================================ */
-.search-bar{
-  display:flex;
-  flex-direction:column;
-  gap:.25rem;
-  width:100%;
-  max-width:320px;
-  background:#DCFCE7;         /* verde suave */
-  border-radius:999px;
-  padding:.4rem .6rem;
-  border:1px solid #86EFAC;
-}
-
-.search-label{
-  font-size:.7rem;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  color:#0F766E;
-}
-
-.search-bar input{
-  border-radius:999px;
-  border:none;
-  padding:.3rem .2rem .1rem;
-  font-size:.86rem;
-  background:transparent;
-  color:#0F172A;
-}
-
-.search-bar input::placeholder{
-  color:#94A3B8;
-}
-
-.search-bar input:focus{
-  outline:none;
-}
-
-/* En pantallas grandes se alinea a la derecha */
-@media (min-width:700px){
-  .search-bar{
-    margin-left:auto;
-  }
-}
-
-/* ============================================================
-   LISTA DE PRODUCTOS
-============================================================ */
-.products .product-list{
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
-}
-
-.product-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:.75rem;
-  padding:.7rem .8rem;
-  border-radius:12px;
-  background:#FFFFFF;
-  border:1px solid #E5E7EB;
-  transition:box-shadow .15s ease, transform .15s ease, border-color .15s ease;
-}
-
-.product-row:hover{
-  border-color:#D1D5DB;
-  box-shadow:0 6px 18px rgba(15,23,42,.06);
-  transform:translateY(-1px);
-}
-
-.product-main{
-  display:flex;
-  flex-direction:column;
-  gap:.2rem;
-}
-
-.product-main h3{
-  margin:0;
-  font-size:.95rem;
-  color:#111827;
-}
-
-.product-unit{
-  margin:0;
-  font-size:.78rem;
-  color:#6B7280;
-}
-
-.product-price{
-  margin:0;
-  font-size:.9rem;
-  font-weight:700;
-  color:#16A34A; /* verde para precio */
-}
-
-/* Cantidades */
-.product-controls{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:.25rem;
-}
-
-.qty-btn{
-  width:32px;
-  height:32px;
-  border-radius:999px;
-  border:1px solid #D1D5DB;
-  background:#F9FAFB;
-  color:#111827;
-  cursor:pointer;
-  font-size:1.1rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .15s ease;
-}
-
-.qty-btn:hover{
-  background:#E5E7EB;
-}
-
-.qty-label{
-  min-width:26px;
-  text-align:center;
-  font-size:.85rem;
-  color:#111827;
-}
-
-/* ============================================================
-   CARRITO
-============================================================ */
-.cart-list{
-  list-style:none;
-  margin:0 0 .9rem;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
-}
-
-.cart-item{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  align-items:center;
-  gap:.5rem;
-  padding:.6rem .7rem;
-  border-radius:10px;
-  background:#F9FAFB;
-  border:1px solid #E5E7EB;
-}
-
-.cart-main{
-  display:flex;
-  flex-direction:column;
-  gap:.15rem;
-  font-size:.8rem;
-}
-
-.cart-main strong{
-  font-size:.9rem;
-  color:#111827;
-}
-
-.cart-cat,
-.cart-unit{
-  font-size:.76rem;
-  color:#6B7280;
-}
-
-.cart-side{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:.1rem;
-  font-size:.78rem;
-  white-space:nowrap;
-}
-
-.cart-price{
-  font-weight:600;
-}
-
-.cart-subtotal{
-  font-weight:700;
-  color:#16A34A;
-}
-
-.cart-empty{
-  font-size:.8rem;
-  color:#9CA3AF;
-}
-
-/* Total */
-.cart-total-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#0F766E;
-  padding:.65rem .9rem;
-  border-radius:12px;
-  margin-top:.6rem;
-  color:white;
-  font-size:.98rem;
-  font-weight:700;
-  box-shadow:0 8px 20px rgba(15,118,110,.45);
-}
-
-/* ============================================================
-   FORMULARIO
-============================================================ */
-.client{
-  border-top:1px dashed #E5E7EB;
-  margin-top:1.1rem;
-  padding-top:.9rem;
-}
-
-.client h3{
-  margin:.1rem 0 .6rem;
-  font-size:.95rem;
-  color:#111827;
-}
-
-.form-row{
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
-  margin-bottom:.7rem;
-}
-
-.form-row label,
-.full{
-  display:flex;
-  flex-direction:column;
-  gap:.25rem;
-}
-
-label{
-  font-size:.8rem;
-  color:#374151;
-}
-
-input[type="text"],
-textarea{
-  width:100%;
-  border-radius:10px;
-  border:1px solid #D1D5DB;
-  padding:.55rem .7rem;
-  font-size:.88rem;
-  background:#F9FAFB;
-  color:#111827;
-  resize:vertical;
-}
-
-input[type="text"]:focus,
-textarea:focus{
-  outline:2px solid #0F766E;
-  outline-offset:1px;
-  background:#FFFFFF;
-}
-
-textarea{
-  min-height:70px;
-}
-
-.btn-row{
-  display:flex;
-  flex-direction:column;
-  gap:.45rem;
-  margin-top:.5rem;
-}
-
-/* ============================================================
-   BOTONES
-============================================================ */
-.btn{
-  border-radius:999px;
-  border:none;
-  padding:.75rem 1.3rem;
-  font-size:.9rem;
-  font-weight:600;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.35rem;
-  transition:all .15s ease;
-}
-
-/* Enviar por WhatsApp */
-.btn-primary{
-  background:#16A34A;
-  color:#F9FAFB;
-  box-shadow:0 10px 24px rgba(22,163,74,.45);
-}
-
-.btn-primary:hover{
-  transform:translateY(-1px);
-  box-shadow:0 14px 32px rgba(22,163,74,.6);
-}
-
-.btn-ghost{
-  background:#FFFFFF;
-  color:#111827;
-  border:1px solid #E5E7EB;
-}
-
-.btn-ghost:hover{
-  background:#F3F4F6;
-}
-
-.hint{
-  margin:.1rem 0 0;
-  font-size:.76rem;
-  color:#6B7280;
-}
-
-.btn-sm{
-  padding:.4rem .9rem;
-  font-size:.8rem;
-}
-
-/* ============================================================
-   PAGINADO
-============================================================ */
-.pagination{
-  margin-top:.9rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:.6rem;
-}
-
-.page-info{
-  font-size:.82rem;
-  color:#6B7280;
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
-.footer{
-  text-align:center;
-  margin-top:1rem;
-  font-size:.78rem;
-  color:#6B7280;
-}
-
-/* ============================================================
-   TABLET / DESKTOP
-============================================================ */
-@media (min-width: 900px){
-  .layout{
-    display:grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    gap:1.2rem;
-  }
-
-  .products .product-list{
-    max-height:460px;
-    overflow-y:auto;
-    padding-right:.4rem;
-  }
-
-  .form-row{
-    flex-direction:row;
-    flex-wrap:wrap;
-  }
-
-  .form-row label{
-    flex:1 1 220px;
-  }
-
-  .btn-row{
-    flex-direction:row;
-    align-items:center;
-  }
-}
-
-
-/* Quitar estilo de link de los botones tipo <a> */
-a.btn {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Que los dos botones ocupen todo el ancho en mobile */
-.top-actions .btn {
-  width: 100%;
-}
-
-/* En desktop, botón ancho pero no 100% */
-@media (min-width:700px){
-  .top-actions .btn{
-    width: auto;
-    min-width: 250px;
-  }
-}
-
-
-.mini-showcase{
-  margin-top: 1rem;
-}
-
-.mini-card{
-  background:#fff;
-  border:1px solid #E5E7EB;
-  border-radius:24px;
-  padding:1.2rem 1.2rem 1rem;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
-}
-
-.mini-card h2{
-  margin:0 0 .3rem;
-  font-size:1.15rem;
-}
-
-.mini-card .muted{
-  margin:.2rem 0 1rem;
-  color:#6B7280;
-}
-
-.chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.5rem;
-  margin-bottom: 1rem;
-}
-
-.chip{
-  padding:.45rem .7rem;
-  border-radius:999px;
-  background:#F3F4F6;
-  border:1px solid #E5E7EB;
-  font-size:.95rem;
-  color:#111827;
-}
-
-.mini-features{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.6rem;
-}
-
-.mini-feature{
-  padding:.55rem .8rem;
-  border-radius:14px;
-  background:#FAFAFA;
-  border:1px solid #E5E7EB;
-  font-size:.95rem;
-}
-
-
-/* ============================================================
-   BOTONES – MICRO ANIMACIONES
-============================================================ */
-
-.btn{
-  transition: 
-    transform .25s ease,
-    box-shadow .25s ease,
-    background-color .25s ease;
-}
-
-/* Hover general */
-.btn:hover{
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 30px rgba(0,0,0,.18);
-}
-
-/* WhatsApp – pulso suave constante */
-.btn-primary{
-  animation: pulseWhatsapp 2.8s infinite;
-}
-
-@keyframes pulseWhatsapp{
-  0%{
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37,211,102,.55);
-  }
-  70%{
-    transform: scale(1.04);
-    box-shadow: 0 0 0 12px rgba(37,211,102,0);
-  }
-  100%{
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37,211,102,0);
-  }
-}
-
-
-/* ============================================================
-   CATEGORÍAS VISUALES – BUBBLES
-============================================================ */
-
-.category-bubbles{
-  margin-top: 1.5rem;
+.site-header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
-.section-title{
-  margin-bottom: 1.2rem;
-  font-size: 1.3rem;
+.logo-wrap {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  background: white;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 25px 50px -12px rgba(255, 107, 0, 0.25);
+  border: 2px solid #fff;
 }
 
-.bubbles-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.2rem;
-  justify-items: center;
-}
-
-.bubble-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: default;
-}
-
-.bubble-img{
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #F3F4F6;
-  border: 1px solid #E5E7EB;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.bubble-img img{
+.logo-wrap img {
   width: 100%;
   height: 100%;
+  border-radius: 32px;
   object-fit: cover;
 }
 
-.bubble-card span{
-  margin-top: .6rem;
-  font-size: .95rem;
-  color: #111827;
+.site-header-title h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #1a1a1a, var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Hover sutil */
-.bubble-card:hover .bubble-img{
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 16px 30px rgba(0,0,0,.15);
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 5px;
+  font-weight: 400;
 }
-
 
 /* ============================================================
-   BOTÓN CATÁLOGO – MÁS LLAMATIVO (SIN SER GRITÓN)
+   CARDS DE ACCIÓN (CATÁLOGO Y WHATSAPP)
 ============================================================ */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
 
-.btn-catalogo{
+/* EFECTO CARD GENERAL */
+.action-card {
+  position: relative;
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 35px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  overflow: hidden;
+}
+
+/* BOTÓN CATÁLOGO - EFECTO SHIMMER (BRILLO) */
+.btn-catalog {
+  background: var(--deep-black);
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem;
+  border-radius: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(249,115,22,.35);
-  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,247,237,1));
-  box-shadow: 0 10px 24px rgba(249,115,22,.18);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-/* Gradiente animado suave */
-.btn-catalogo::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background: linear-gradient(
-    90deg,
-    rgba(249,115,22,.0),
-    rgba(249,115,22,.25),
-    rgba(16,185,129,.18),
-    rgba(249,115,22,.0)
-  );
-  transform: translateX(-120%);
-  animation: catalogGlow 3.2s ease-in-out infinite;
+.btn-catalog::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s infinite;
 }
 
-/* Brillo tipo “shimmer” */
-.btn-catalogo::after{
-  content:"";
-  position:absolute;
-  top:-40%;
-  left:-60%;
-  width: 60%;
-  height: 200%;
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0),
-    rgba(255,255,255,.55),
-    rgba(255,255,255,0)
-  );
-  transform: rotate(20deg);
-  animation: catalogShimmer 4.5s ease-in-out infinite;
-  opacity: .65;
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
-/* Mantener texto arriba del efecto */
-.btn-catalogo{
-  z-index: 0;
-}
-.btn-catalogo > *{
-  position: relative;
-  z-index: 1;
-}
-
-/* Hover más divertido */
-.btn-catalogo:hover{
-  border-color: rgba(249,115,22,.55);
-  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,237,213,1));
-  box-shadow: 0 16px 34px rgba(249,115,22,.25);
-}
-
-/* Animaciones */
-@keyframes catalogGlow{
-  0%   { transform: translateX(-120%); opacity: .0; }
-  30%  { opacity: .9; }
-  55%  { opacity: .6; }
-  100% { transform: translateX(120%); opacity: 0; }
+/* BOTÓN WHATSAPP - EFECTO PULSO */
+.btn-whatsapp {
+  background: var(--whatsapp-green);
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem;
+  border-radius: 20px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.2);
+  animation: pulse 2s infinite;
 }
 
-@keyframes catalogShimmer{
-  0%   { left:-60%; opacity: 0; }
-  20%  { opacity: .55; }
-  50%  { left:120%; opacity: 0; }
-  100% { left:120%; opacity: 0; }
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* Respeta usuarios con "reducir movimiento" */
-@media (prefers-reduced-motion: reduce){
-  .btn-catalogo::before,
-  .btn-catalogo::after{
-    animation: none;
-  }
+.btn-catalog:hover, .btn-whatsapp:hover {
+  transform: translateY(-5px);
 }
 
+/* ============================================================
+   GRID DE CATEGORÍAS (BUBBLES)
+============================================================ */
+.category-section { margin-top: 3rem; }
+.section-title {
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.bubble-card {
+  text-align: center;
+}
+
+.bubble-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+}
+
+.bubble-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.bubble-card span {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.bubble-card:hover .bubble-img {
+  transform: scale(1.1) rotate(5deg);
+  border-color: var(--accent-orange);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 500px) {
+  .bubbles-grid { grid-template-columns: repeat(2, 1fr); }
+  .site-header-title h1 { font-size: 2.2rem; }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
