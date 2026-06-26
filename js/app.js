@@ -207,6 +207,16 @@ function initUI() {
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       searchTerm = e.target.value.trim().toLowerCase();
+      
+      const title = $(".section-title");
+      if (searchTerm) {
+        document.body.classList.add("searching-active");
+        if (title) title.textContent = "Resultados de búsqueda";
+      } else {
+        document.body.classList.remove("searching-active");
+        if (title) title.textContent = "¿Qué estás buscando?";
+      }
+      
       renderProducts();
     });
   }

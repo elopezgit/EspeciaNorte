@@ -517,3 +517,12 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+
+/* ============================================================
+   SEARCH OVERLAY MODE
+============================================================ */
+body.searching-active .categories-grid,
+body.searching-active .marquee-container,
+body.searching-active .catalog-banner {
+  display: none !important;
+}
