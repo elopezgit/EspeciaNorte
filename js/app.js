@@ -1,7 +1,6 @@
-// Especia Norte - Landing de pedidos con WhatsApp
+// Especia Norte - PedidosYa Style + Bento Grid + Splash
 // ===============================================
-// Configuración principal
-const WHATSAPP_NUMBER = "5493813159106"; // modificar si cambia el número de contacto
+const WHATSAPP_NUMBER = "5493813159106"; 
 
 // =====================
 // Catálogo de productos
@@ -10,6 +9,8 @@ const CATALOG = [
   {
     id: "l-nea-c-rnica-embutidos",
     name: "🥩 Línea cárnica / embutidos",
+    image: "img/tripas.jfif", // Asignando imagen para el grid
+    gridSize: "size-large",
     items: [
       { code: "ESN-EMBUTIN-LIGADOR-P-EMB-X-1-KG", name: "EMBUTIN- LIGADOR P/EMB. X 1 KG", unit: "UNI", price: 1748.0 },
       { code: "ESN-EMBUTIN-LIGADOR-P-EMB-X-10-KG", name: "EMBUTIN-LIGADOR P/EMB. X 10 KG.", unit: "UNI", price: 15640.0 },
@@ -32,6 +33,8 @@ const CATALOG = [
   {
     id: "hierbas-y-hojas",
     name: "🌿 Hierbas y Hojas",
+    image: "img/especias.jfif",
+    gridSize: "size-normal",
     items: [
       { code: "ESN-ADOBO-PARA-PIZZA", name: "ADOBO PARA PIZZA", unit: "KG.", price: 6440.0 },
       { code: "ESN-ALBAHACA-EN-HOJAS", name: "ALBAHACA EN HOJAS", unit: "KG", price: 6440.0 },
@@ -52,7 +55,9 @@ const CATALOG = [
   },
   {
     id: "pimentones-aj-es-condimentos-picantes",
-    name: "🌶 Pimentones / Ajíes / Condimentos picantes",
+    name: "🌶 Ajíes / Picantes",
+    image: "img/condimentos.jfif",
+    gridSize: "size-normal",
     items: [
       { code: "ESN-AJI-CAYENA-AMARILLO", name: "AJI CAYENA AMARILLO", unit: "KG.", price: 6624.0 },
       { code: "ESN-AJI-CAYENA-ROJO", name: "AJI CAYENA ROJO", unit: "KG.", price: 6624.0 },
@@ -68,7 +73,9 @@ const CATALOG = [
   },
   {
     id: "semillas-pimientas-especias-finas",
-    name: "🧂 Semillas / Pimientas / Especias finas",
+    name: "🧂 Semillas / Pimientas",
+    image: "img/mezclas.jfif",
+    gridSize: "size-tall",
     items: [
       { code: "ESN-ANIS-EN-GRANO", name: "ANIS EN GRANO", unit: "KG.", price: 9200.0 },
       { code: "ESN-BERNECOL-EMULSIFICANTE", name: "BERNECOL-EMULSIFICANTE", unit: "KG", price: 7912.0 },
@@ -92,7 +99,6 @@ const CATALOG = [
       { code: "ESN-JENGIBRE-MOLIDO", name: "JENGIBRE MOLIDO", unit: "KG", price: 7452.0 },
       { code: "ESN-MOSTAZA-EN-GRANO", name: "MOSTAZA EN GRANO", unit: "KG", price: 6072.0 },
       { code: "ESN-MOSTAZA-MOLIDA", name: "MOSTAZA MOLIDA", unit: "KG", price: 6256.0 },
-      { code: "ESN-NT", name: "NT", unit: "UNI", price: 6440.0 },
       { code: "ESN-PIMIENTA-ARABE", name: "PIMIENTA ARABE", unit: "KG.", price: 14812.0 },
       { code: "ESN-PIMIENTA-BLANCA-ESPECIAL", name: "PIMIENTA BLANCA ESPECIAL", unit: "KG.", price: 14812.0 },
       { code: "ESN-PIMIENTA-BLANCA-GRANO", name: "PIMIENTA BLANCA GRANO", unit: "KG.", price: 35420.0 },
@@ -108,6 +114,8 @@ const CATALOG = [
   {
     id: "frutas-secas",
     name: "🍇 Frutas secas",
+    image: "img/dulcebatata.jpg",
+    gridSize: "size-normal",
     items: [
       { code: "ESN-CIRUELA-D-AGEN-132-154", name: "CIRUELA D AGEN 132/154", unit: "KG.", price: 6164.0 },
       { code: "ESN-CIRUELA-D-AGEN-88-110", name: "CIRUELA D AGEN 88/110", unit: "KG.", price: 6532.0 },
@@ -127,15 +135,10 @@ const CATALOG = [
     ]
   },
   {
-    id: "cocos-harinas-secos",
-    name: "🥥 Cocos / Harinas / Secos",
-    items: [
-      { code: "ESN-CEBOLLA-EN-ESCAMAS", name: "CEBOLLA EN ESCAMAS", unit: "KG", price: 0.0 }
-    ]
-  },
-  {
     id: "postres-gelatinas-y-cacaos",
-    name: "🍮 Postres, Gelatinas y Cacaos",
+    name: "🍮 Postres y Cacaos",
+    image: "img/condimentos.jfif",
+    gridSize: "size-normal",
     items: [
       { code: "ESN-AZUCAR-IMPALPABLE", name: "AZUCAR IMPALPABLE", unit: "KG", price: 1472.0 },
       { code: "ESN-CACAO-EN-POLVO-AMARGO", name: "CACAO EN POLVO AMARGO", unit: "KG", price: 8280.0 },
@@ -150,83 +153,30 @@ const CATALOG = [
     ]
   },
   {
-    id: "hilos-ovillos-y-accesorios",
-    name: "🧵 Hilos, Ovillos y Accesorios",
+    id: "aceitunas-liquidos-embalajes",
+    name: "📦 Otros",
+    image: "img/aceitunas.webp",
+    gridSize: "size-large",
     items: [
-      { code: "ESN-HILO-BICOLOR-X-1-KG", name: "HILO BICOLOR x 1 KG.", unit: "UNI", price: 11408.0 },
-      { code: "ESN-HILO-BICOLOR-X-1-2-KG", name: "HILO BICOLOR x 1/2 KG.", unit: "UNI", price: 5980.0 },
-      { code: "ESN-HILO-CRUDO-X-300-GR-APROX", name: "HILO CRUDO x 300 GR. APROX.", unit: "UNI", price: 2760.0 },
-      { code: "ESN-HILO-CRUDO-X-500-GR-APROX", name: "HILO CRUDO X 500 Gr.APROX.", unit: "UNI", price: 4324.0 },
-      { code: "ESN-HILO-OVILLO-1-UNID-X-40-GR", name: "HILO OVILLO 1 UNID. x 40 GR.", unit: "UNI", price: 432.4 },
-      { code: "ESN-HILO-OVILLO-10-UNID-X-40-GR", name: "HILO OVILLO 10 UNID. x 40 GR.", unit: "UNI", price: 3956.0 },
-      { code: "ESN-HILO-PULIDO-AMAR-VDE-X-1-KG", name: "HILO PULIDO AMAR/VDE x 1 KG.", unit: "UNI", price: 10212.0 },
-      { code: "ESN-HILO-PULIDO-AMAR-VDE-X-1-2-KG", name: "HILO PULIDO AMAR/VDE x 1/2 KG.", unit: "UNI", price: 5336.0 }
-    ]
-  },
-  {
-    id: "tripas-embutidos-especializados",
-    name: "🥩 Tripas / Embutidos especializados",
-    items: [
-      { code: "ESN-TRIPAS-DE-CERDO-CAL-38-40", name: "TRIPAS DE CERDO CAL. 38/40", unit: "MAD", price: 26036.0 },
-      { code: "ESN-TRIPAS-DE-CERDO-CAL-42-44", name: "TRIPAS DE CERDO CAL. 42/44", unit: "MAD", price: 19964.0 },
-      { code: "ESN-TRIPAS-P-SALAME-SINT-CAL-45", name: "TRIPAS P/SALAME SINT. CAL. 45", unit: "MTS", price: 644.0 },
-      { code: "ESN-TRIPAS-SINT-C-23-OD", name: "TRIPAS SINT. C.23 OD", unit: "MAD", price: 6900.0 },
-      { code: "ESN-TRIPAS-VACUNAS-CAL-34-37-X-15M", name: "TRIPAS VACUNAS CAL34-37 X 15M", unit: "MAD", price: 4416.0 },
-      { code: "ESN-TRIPAS-VACUNAS-CAL-37-40-X-15M", name: "TRIPAS VACUNAS CAL.37-40 X 15M", unit: "MAD", price: 5244.0 },
-      { code: "ESN-TRIPON", name: "TRIPON", unit: "MAD", price: 1472.0 }
-    ]
-  },
-  {
-    id: "l-quidos-vinagre-etc",
-    name: "🍶 Líquidos (Vinagre, etc.)",
-    items: [
-      { code: "ESN-VINAGRE-X-5-LITROS", name: "VINAGRE x 5 LITROS", unit: "BID", price: 3220.0 }
-    ]
-  },
-  {
-    id: "bolsas-envases-y-embalajes",
-    name: "📦 Bolsas, Envases y Embalajes",
-    items: [
+      { code: "ESN-VINAGRE-X-5-LITROS", name: "VINAGRE x 5 LITROS", unit: "BID", price: 3220.0 },
       { code: "ESN-BOLSAS-10-X-20-CM", name: "BOLSAS 10 X 20 CM", unit: "UNI", price: 644.0 },
       { code: "ESN-BOLSAS-12-X-25-CM", name: "BOLSAS 12 X 25 CM", unit: "UNI", price: 920.0 },
       { code: "ESN-BOLSAS-15-X-25-CM", name: "BOLSAS 15 X 25 CM", unit: "UNI", price: 1104.0 },
       { code: "ESN-CHALA-PARA-TAMALES-X-BOLSA", name: "CHALA PARA TAMALES X BOLSA", unit: "BL.", price: 73600.0 },
-      { code: "ESN-CHALA-PARA-TAMALES-X-UNIDAD", name: "CHALA PARA TAMALES X UNIDAD", unit: "UNI", price: 4600.0 }
-    ]
-  },
-  {
-    id: "productos-con-precio-a-confirmar",
-    name: "⚠️ Productos con precio a confirmar",
-    items: [
-      { code: "ESN-CEBOLLA-EN-ESCAMAS", name: "CEBOLLA EN ESCAMAS", unit: "KG", price: 0.0 },
-      { code: "ESN-HONGOS", name: "HONGOS", unit: "KG", price: 0.0 },
-      { code: "ESN-INDIAS-BATTER-X-1-KG", name: "INDIAS BATTER X 1 KG.", unit: "KG.", price: 0.0 },
-      { code: "ESN-INT-P-CHORIZO-DE-POLLO-X-1-KG-CALL", name: "INT. P/ CHORIZO DE POLLO X 1 KG CALL.", unit: "KG", price: 0.0 }
+      { code: "ESN-CHALA-PARA-TAMALES-X-UNIDAD", name: "CHALA PARA TAMALES X UNIDAD", unit: "UNI", price: 4600.0 },
+      { code: "ESN-HILO-BICOLOR-X-1-KG", name: "HILO BICOLOR x 1 KG.", unit: "UNI", price: 11408.0 },
+      { code: "ESN-HILO-CRUDO-X-300-GR-APROX", name: "HILO CRUDO x 300 GR. APROX.", unit: "UNI", price: 2760.0 }
     ]
   }
 ];
 
-// =====================
-// UNA SOLA LISTA ORDENADA
-// =====================
-const ALL_ITEMS = CATALOG
-  .flatMap(cat =>
-    cat.items.map(prod => ({
-      ...prod,
-      categoryName: cat.name
-    }))
-  )
-  .sort((a, b) => a.name.localeCompare(b.name, "es-AR", { sensitivity: "base" }));
-
 // Estado de la app
-const cart = new Map(); // key: code -> { code,name,unit,price,qty,categoryName }
+const cart = new Map(); // key: code -> item details
 let searchTerm = "";
-let currentPage = 1;
-const ITEMS_PER_PAGE = 5;
 
-// Utilidades
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+// Utils
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
 function formatPrice(n) {
   return n.toLocaleString("es-AR", {
@@ -236,269 +186,326 @@ function formatPrice(n) {
 }
 
 // =====================
-// Carrito helpers
+// Inicialización UI
 // =====================
-function getCartItem(code) {
-  return cart.get(code) || null;
-}
+function initUI() {
+  
+  // Splash Screen Logic
+  setTimeout(() => {
+    const splash = $("#splashScreen");
+    if(splash) {
+      splash.classList.add("hidden");
+      setTimeout(() => splash.remove(), 1000); // Remove from DOM after transition
+    }
+  }, 2200); // 2.2 seconds display
 
-function setCartQty(item, qty) {
-  const key = item.code;
-  const cur = getCartItem(key);
-  if (qty <= 0) {
-    cart.delete(key);
-  } else {
-    cart.set(key, {
-      code: item.code,
-      name: item.name,
-      unit: item.unit,
-      price: item.price,
-      categoryName: item.categoryName,
-      qty
+  renderCategoriesGrid();
+  renderProducts();
+  
+  // Buscador
+  const searchInput = $("#searchInput");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchTerm = e.target.value.trim().toLowerCase();
+      renderProducts();
     });
   }
-  renderProducts();
-  renderCart();
-}
 
-function changeCartQty(item, delta) {
-  const cur = getCartItem(item.code);
-  const newQty = Math.max(0, (cur?.qty || 0) + delta);
-  setCartQty(item, newQty);
+  // Cart Modal
+  const cartBtn = $("#floatingCartBtn");
+  const modal = $("#checkoutModal");
+  const closeBtn = $("#closeModalBtn");
+
+  if (cartBtn) cartBtn.addEventListener("click", () => modal.classList.add("active"));
+  if (closeBtn) closeBtn.addEventListener("click", () => modal.classList.remove("active"));
+  
+  // Cerrar al clickear fuera
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("active");
+    });
+  }
+
+  // Enviar pedido
+  const btnWA = $("#btnWhatsApp");
+  if (btnWA) btnWA.addEventListener("click", sendWhatsApp);
+
+  // Vaciar carrito
+  const btnClr = $("#btnClearCart");
+  if (btnClr) btnClr.addEventListener("click", () => {
+    cart.clear();
+    modal.classList.remove("active");
+    renderProducts();
+    updateCartUI();
+  });
 }
 
 // =====================
-// Render de productos (lista única + filtro + paginado)
+// Render Categorías (Bento Grid)
+// =====================
+function renderCategoriesGrid() {
+  const grid = $("#categoriesGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  CATALOG.forEach(cat => {
+    const card = document.createElement("div");
+    card.className = `cat-card ${cat.gridSize || ""}`;
+    
+    // Background Image
+    const img = document.createElement("img");
+    img.className = "cat-card-img";
+    img.src = cat.image || "img/especias.jfif";
+    img.alt = cat.name;
+
+    // Overlay gradient
+    const overlay = document.createElement("div");
+    overlay.className = "cat-card-overlay";
+
+    // Text
+    const span = document.createElement("span");
+    span.textContent = cat.name;
+
+    card.appendChild(img);
+    card.appendChild(overlay);
+    card.appendChild(span);
+
+    // Click to scroll
+    card.addEventListener("click", () => {
+      const section = $(`#cat-${cat.id}`);
+      if (section) {
+        // Offset for header height
+        const y = section.getBoundingClientRect().top + window.scrollY - 80; 
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+
+    grid.appendChild(card);
+  });
+}
+
+// =====================
+// Render Lista Productos
 // =====================
 function renderProducts() {
   const cont = $("#productList");
   if (!cont) return;
   cont.innerHTML = "";
 
-  const title = $("#currentCategoryName");
-  if (title) title.textContent = "Productos";
+  let hasResults = false;
 
-  // Filtrado por buscador (case-insensitive para que "aji" matchee "AJI")
-  let filtered = ALL_ITEMS;
-  if (searchTerm) {
-    const term = searchTerm.toUpperCase();
-    filtered = filtered.filter(prod => {
-      const nameUpper = prod.name.toUpperCase();
-      const codeUpper = prod.code.toUpperCase();
-      return nameUpper.includes(term) || codeUpper.includes(term);
+  CATALOG.forEach(cat => {
+    const filteredItems = cat.items.filter(prod => {
+      if (!searchTerm) return true;
+      return prod.name.toLowerCase().includes(searchTerm) || 
+             prod.code.toLowerCase().includes(searchTerm);
     });
-  }
 
-  const pageInfo = $("#pageInfo");
-  const prevBtn = $("#prevPage");
-  const nextBtn = $("#nextPage");
+    if (filteredItems.length === 0) return;
+    
+    hasResults = true;
 
-  if (!filtered.length) {
-    cont.innerHTML = "<p class='muted'>No se encontraron productos para esa búsqueda.</p>";
-    if (pageInfo) pageInfo.textContent = "Página 0 de 0";
-    if (prevBtn) prevBtn.disabled = true;
-    if (nextBtn) nextBtn.disabled = true;
-    return;
-  }
+    const section = document.createElement("div");
+    section.className = "category-group";
+    section.id = `cat-${cat.id}`;
 
-  const totalItems = filtered.length;
-  const totalPages = Math.max(1, Math.ceil(totalItems / ITEMS_PER_PAGE));
-  if (currentPage > totalPages) currentPage = totalPages;
+    const title = document.createElement("h2");
+    title.className = "category-group-title";
+    title.textContent = cat.name;
+    section.appendChild(title);
 
-  const start = (currentPage - 1) * ITEMS_PER_PAGE;
-  const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+    filteredItems.forEach(prod => {
+      const row = document.createElement("article");
+      row.className = "product-row";
 
-  pageItems.forEach(prod => {
-    const item = { ...prod }; // ya viene con categoryName
+      const main = document.createElement("div");
+      main.className = "product-main";
+      
+      const h3 = document.createElement("h3");
+      h3.textContent = prod.name;
+      
+      const unit = document.createElement("p");
+      unit.className = "product-unit";
+      unit.textContent = `Unidad: ${prod.unit}`;
+      
+      const price = document.createElement("p");
+      price.className = "product-price";
+      price.textContent = `$ ${formatPrice(prod.price)}`;
+      
+      main.append(h3, unit, price);
 
-    const row = document.createElement("article");
-    row.className = "product-row";
+      const controls = document.createElement("div");
+      controls.className = "product-controls";
+      
+      const minus = document.createElement("button");
+      minus.type = "button";
+      minus.textContent = "−";
+      minus.className = "qty-btn";
+      
+      const qtySpan = document.createElement("span");
+      qtySpan.className = "qty-label";
+      
+      const plus = document.createElement("button");
+      plus.type = "button";
+      plus.textContent = "+";
+      plus.className = "qty-btn";
 
-    const main = document.createElement("div");
-    main.className = "product-main";
-    const h3 = document.createElement("h3");
-    h3.textContent = prod.name;
-    const unit = document.createElement("p");
-    unit.className = "product-unit";
-    unit.textContent = `Unidad: ${prod.unit}`;
-    const price = document.createElement("p");
-    price.className = "product-price";
-    price.textContent = `$ ${formatPrice(prod.price)}`;
-    main.append(h3, unit, price);
+      const curItem = cart.get(prod.code);
+      qtySpan.textContent = curItem ? curItem.qty : "0";
 
-    const controls = document.createElement("div");
-    controls.className = "product-controls";
-    const minus = document.createElement("button");
-    minus.type = "button";
-    minus.textContent = "−";
-    minus.className = "qty-btn";
-    const qtySpan = document.createElement("span");
-    qtySpan.className = "qty-label";
-    const plus = document.createElement("button");
-    plus.type = "button";
-    plus.textContent = "+";
-    plus.className = "qty-btn";
+      minus.addEventListener("click", () => changeCartQty(prod, cat.name, -1, qtySpan));
+      plus.addEventListener("click", () => changeCartQty(prod, cat.name, +1, qtySpan));
 
-    const cur = getCartItem(prod.code);
-    qtySpan.textContent = cur ? String(cur.qty) : "0";
+      controls.append(minus, qtySpan, plus);
+      row.append(main, controls);
+      section.appendChild(row);
+    });
 
-    minus.addEventListener("click", () => changeCartQty(item, -1));
-    plus.addEventListener("click", () => changeCartQty(item, +1));
-
-    controls.append(minus, qtySpan, plus);
-
-    row.append(main, controls);
-    cont.appendChild(row);
+    cont.appendChild(section);
   });
 
-  // Actualizar info de paginado
-  if (pageInfo) {
-    pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
-  }
-  if (prevBtn) {
-    prevBtn.disabled = currentPage <= 1;
-  }
-  if (nextBtn) {
-    nextBtn.disabled = currentPage >= totalPages;
+  if (!hasResults) {
+    cont.innerHTML = "<div class='empty-msg'>No se encontraron productos para tu búsqueda.</div>";
   }
 }
 
 // =====================
-// Render del carrito
+// Gestión Carrito
 // =====================
-function renderCart() {
-  const list = $("#cartList");
-  const totalEl = $("#cartTotal");
-  if (!list || !totalEl) return;
+function changeCartQty(prod, categoryName, delta, qtySpan) {
+  const code = prod.code;
+  const cur = cart.get(code);
+  const currentQty = cur ? cur.qty : 0;
+  let newQty = currentQty + delta;
+  
+  if (newQty <= 0) {
+    cart.delete(code);
+    qtySpan.textContent = "0";
+  } else {
+    cart.set(code, {
+      code: prod.code,
+      name: prod.name,
+      unit: prod.unit,
+      price: prod.price,
+      categoryName: categoryName,
+      qty: newQty
+    });
+    qtySpan.textContent = newQty.toString();
+  }
+  
+  qtySpan.style.transform = "scale(1.3)";
+  setTimeout(() => qtySpan.style.transform = "scale(1)", 150);
 
-  list.innerHTML = "";
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const floatingBtn = $("#floatingCartBtn");
+  const qtyBadge = $("#floatingCartQty");
+  const totalText = $("#floatingCartTotal");
+  
+  const modalList = $("#cartList");
+  const modalTotal = $("#cartTotalValue");
+
+  let totalQty = 0;
+  let totalPrice = 0;
   const items = Array.from(cart.values());
-  if (!items.length) {
-    list.innerHTML = "<li class='cart-empty'>Todavía no agregaste productos.</li>";
-    totalEl.textContent = "$ 0,00";
-    return;
-  }
 
-  let total = 0;
-  items.forEach((it, idx) => {
-    const li = document.createElement("li");
-    li.className = "cart-item";
-    const lineTotal = it.price * it.qty;
-    total += lineTotal;
-    li.innerHTML = `
-      <div class="cart-main">
-        <strong>${idx + 1}. ${it.name}</strong>
-        <span class="cart-cat">${it.categoryName}</span>
-        <span class="cart-unit">Unidad: ${it.unit}</span>
-      </div>
-      <div class="cart-side">
-        <span class="cart-qty">Cant: ${it.qty}</span>
-        <span class="cart-price">$ ${formatPrice(it.price)}</span>
-        <span class="cart-subtotal">Subt: $ ${formatPrice(lineTotal)}</span>
-      </div>
-    `;
-    list.appendChild(li);
+  items.forEach(it => {
+    totalQty += it.qty;
+    totalPrice += (it.price * it.qty);
   });
 
-  totalEl.textContent = `$ ${formatPrice(total)}`;
+  if (totalQty > 0) {
+    floatingBtn.classList.add("visible");
+    qtyBadge.textContent = totalQty;
+    totalText.textContent = `$ ${formatPrice(totalPrice)}`;
+  } else {
+    floatingBtn.classList.remove("visible");
+  }
+
+  if (modalList) {
+    modalList.innerHTML = "";
+    if (items.length === 0) {
+      modalList.innerHTML = "<li class='cart-item'><div class='cart-item-main'><span class='cart-item-name'>Carrito vacío</span></div></li>";
+    } else {
+      items.forEach(it => {
+        const li = document.createElement("li");
+        li.className = "cart-item";
+        li.innerHTML = `
+          <div class="cart-item-main">
+            <span class="cart-item-name">${it.name}</span>
+            <span class="cart-item-meta">${it.categoryName} • Unid: ${it.unit}</span>
+          </div>
+          <div class="cart-item-side">
+            <span class="cart-item-price">${it.qty} x $ ${formatPrice(it.price)}</span>
+          </div>
+        `;
+        modalList.appendChild(li);
+      });
+    }
+  }
+
+  if (modalTotal) {
+    modalTotal.textContent = `$ ${formatPrice(totalPrice)}`;
+  }
 }
 
 // =====================
-// WhatsApp
+// WhatsApp Checkout
 // =====================
 function buildWhatsAppMessage() {
   const name = $("#inputName")?.value?.trim() || "-";
-  const email = $("#inputEmail")?.value?.trim() || "-";
+  const address = $("#inputAddress")?.value?.trim() || "Retira";
   const notes = $("#inputNotes")?.value?.trim();
 
   const items = Array.from(cart.values());
   if (!items.length) {
-    return `*Pedido Especia Norte*\n\n(Sin productos seleccionados aún)`;
+    return `*Pedido Especia Norte*\n\n(Sin productos)`;
   }
 
   let lines = [];
-  lines.push("*Pedido Especia Norte*");
-  lines.push("");
-  lines.push(`Nombre: ${name}`);
-  lines.push(`Contacto: ${email}`);
-  if (notes) lines.push(`Notas: ${notes}`);
+  lines.push(`*NUEVO PEDIDO - ESPECIA NORTE* 🚚`);
+  lines.push(`---------------------------------`);
+  lines.push(`*Cliente:* ${name}`);
+  lines.push(`*Envío / Retiro:* ${address}`);
+  if (notes) lines.push(`*Notas:* ${notes}`);
+  lines.push(`---------------------------------`);
+  lines.push(`*DETALLE DEL PEDIDO:*`);
   lines.push("");
 
   let total = 0;
-  items.forEach((it, idx) => {
+  items.forEach((it) => {
     const lineTotal = it.price * it.qty;
     total += lineTotal;
-    lines.push(`*${idx + 1}.* ${it.name}`);
-    lines.push(`Unidad: ${it.unit}`);
-    lines.push(`Cantidad: ${it.qty}`);
-    lines.push(`Precio unitario: $ ${formatPrice(it.price)}`);
-    lines.push(`Subtotal: $ ${formatPrice(lineTotal)}`);
-    lines.push("");
+    lines.push(`🔸 ${it.qty}x ${it.name} (${it.unit})`);
+    lines.push(`   Subtotal: $ ${formatPrice(lineTotal)}`);
   });
 
-  lines.push(`Total productos: ${items.length}`);
-  const totalQty = items.reduce((a, b) => a + b.qty, 0);
-  lines.push(`Total unidades: ${totalQty}`);
-  lines.push(`Total general: $ ${formatPrice(total)}`);
-
+  lines.push(`---------------------------------`);
+  lines.push(`*Total a Pagar:* $ ${formatPrice(total)}`);
+  
   return lines.join("\n");
 }
 
 function sendWhatsApp() {
+  const items = Array.from(cart.values());
+  if (!items.length) {
+    alert("Por favor, agrega productos a tu pedido primero.");
+    return;
+  }
+  
+  const name = $("#inputName")?.value?.trim();
+  if (!name) {
+    alert("Por favor, ingresa tu nombre.");
+    $("#inputName").focus();
+    return;
+  }
+
   const message = buildWhatsAppMessage();
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank", "noopener");
 }
 
-function clearCart() {
-  cart.clear();
-  renderProducts();
-  renderCart();
-}
-
-// =====================
 // Init
-// =====================
-document.addEventListener("DOMContentLoaded", () => {
-  const y = $("#year");
-  if (y) y.textContent = String(new Date().getFullYear());
-
-  renderProducts();
-  renderCart();
-
-  const btnWA = $("#btnWhatsApp");
-  if (btnWA) btnWA.addEventListener("click", sendWhatsApp);
-
-  const btnClr = $("#btnClearCart");
-  if (btnClr) btnClr.addEventListener("click", clearCart);
-
-  // Buscador
-  const searchInput = $("#searchInput");
-  if (searchInput) {
-    searchInput.addEventListener("input", () => {
-      searchTerm = searchInput.value.trim();
-      currentPage = 1; // siempre vuelvo a la primer página al cambiar búsqueda
-      renderProducts();
-    });
-  }
-
-  // Paginado
-  const prevBtn = $("#prevPage");
-  const nextBtn = $("#nextPage");
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderProducts();
-      }
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      currentPage++;
-      renderProducts();
-    });
-  }
-});
+document.addEventListener("DOMContentLoaded", initUI);

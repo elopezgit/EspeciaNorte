@@ -2,124 +2,143 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Especia Norte — Catálogo Mayorista</title>
-  <meta name="description" content="Descargá nuestro catálogo y hacé tu pedido mayorista de especias y condimentos en Especia Norte." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Especia Norte — Pedidos Mayoristas</title>
+  <meta name="description" content="Descargá nuestro catálogo y hacé tu pedido mayorista de especias." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <div class="container">
-    
-    <header class="site-header">
-      <div class="logo-wrap">
-        <img src="img/logoEspeciaNorte.png" alt="Especia Norte Logo" />
-      </div>
-      <div class="site-header-title">
-        <h1>Especia Norte</h1>
-        <p class="subtitle">Sabor y Calidad Mayorista • Tucumán</p>
-      </div>
-    </header>
-
-    <section class="hero-actions">
-      
-      <div class="action-card">
-        <div class="action-icon">📂</div>
-        <h2>Lista de Precios</h2>
-        <p>Descargá nuestro catálogo actualizado en PDF con todos nuestros productos y ofertas.</p>
-        <a 
-          href="pdf/Lista_Precios_Especia_Norte.pdf" 
-          target="_blank" 
-          rel="noopener" 
-          class="btn-catalog"
-        >
-          📥 DESCARGAR CATÁLOGO
-        </a>
-      </div>
-
-      <div class="action-card">
-        <div class="action-icon">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" width="45">
-        </div>
-        <h2>Pedidos y Consultas</h2>
-        <p>Escribinos directamente para armar tu pedido personalizado o sacarte cualquier duda.</p>
-        <a 
-          href="https://wa.me/5493814767643?text=%F0%9F%8C%B6%EF%B8%8F%20%C2%A1Hola%20Especia%20Norte!%20%0A%0A%F0%9F%93%9D%20Me%20gustar%C3%ADa%20hacer%20un%20pedido%20mayorista.%20%C2%BFPodr%C3%ADan%20enviarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20stock%20y%20m%C3%A9todos%20de%20env%C3%ADo%3F%20%0A%0A%E2%9C%A8%20Muchas%20gracias." 
-          target="_blank" 
-          rel="noopener" 
-          class="btn-whatsapp"
-        >
-          💬 ENVIAR WHATSAPP
-        </a>
-      </div>
-
-    </section>
-
-    <section class="category-section">
-      <h2 class="section-title">Nuestras Líneas</h2>
-
-      <div class="bubbles-grid">
-
-        <div class="bubble-card">
-          <div class="bubble-img">
-            <img src="img/especias.jfif" alt="Especias" />
-          </div>
-          <span>Especias</span>
-        </div>
-
-        <div class="bubble-card">
-          <div class="bubble-img">
-            <img src="img/condimentos.jfif" alt="Condimentos" />
-          </div>
-          <span>Condimentos</span>
-        </div>
-
-        <div class="bubble-card">
-          <div class="bubble-img">
-            <img src="img/mezclas.jfif" alt="Mezclas" />
-          </div>
-          <span>Mezclas</span>
-        </div>
-
-        <div class="bubble-card">
-          <div class="bubble-img">
-            <img src="img/dulcebatata.jpg" alt="Dulces" />
-          </div>
-          <span>Dulces</span>
-        </div>
-
-        <div class="bubble-card">
-          <div class="bubble-img">
-            <img src="img/aceitunas.webp" alt="Aceitunas" />
-          </div>
-          <span>Aceitunas</span>
-        </div>
-
-        <div class="bubble-card">
-          <div class="bubble-img">
-            <img src="img/tripas.jfif" alt="Tripas" />
-          </div>
-          <span>Tripas</span>
-        </div>
-
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> Especia Norte — San Miguel de Tucumán</p>
-    </footer>
-
+  
+  <!-- Splash Screen -->
+  <div id="splashScreen" class="splash-screen">
+    <div class="splash-content">
+      <img src="img/logoEspeciaNorte.png" alt="Especia Norte Logo" class="splash-logo" />
+      <h1 class="splash-title">Especia Norte</h1>
+      <p class="splash-subtitle">Sabor y Calidad Mayorista</p>
+    </div>
   </div>
 
-  <script>
-    // Script simple para actualizar el año en el footer automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="logo-mini">
+        <img src="img/logoEspeciaNorte.png" alt="Especia Norte Logo" />
+      </div>
+      <div class="brand-info">
+        <h1>Especia Norte</h1>
+        <span class="delivery-badge">🟢 Envío a domicilio y retiros</span>
+      </div>
+    </div>
+    
+    <!-- Prominent Catalog Download -->
+    <a href="pdf/Catalogo260626.pdf" target="_blank" rel="noopener" class="catalog-banner btn-shimmer">
+      <div class="catalog-banner-icon">📥</div>
+      <div class="catalog-banner-text">
+        <strong>Descargar Catálogo PDF</strong>
+        <span>Lista de precios mayorista actualizada</span>
+      </div>
+    </a>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Buscar especias, condimentos..." />
+    </div>
+  </header>
+
+  <!-- Infinite Marquee / Banners -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-item"><img src="img/especias.jfif" alt="Especias"></div>
+      <div class="marquee-item"><img src="img/condimentos.jfif" alt="Condimentos"></div>
+      <div class="marquee-item"><img src="img/aceitunas.webp" alt="Aceitunas"></div>
+      <div class="marquee-item"><img src="img/mezclas.jfif" alt="Mezclas"></div>
+      <div class="marquee-item"><img src="img/tripas.jfif" alt="Tripas"></div>
+      <div class="marquee-item"><img src="img/dulcebatata.jpg" alt="Dulce de Batata"></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item"><img src="img/especias.jfif" alt="Especias"></div>
+      <div class="marquee-item"><img src="img/condimentos.jfif" alt="Condimentos"></div>
+      <div class="marquee-item"><img src="img/aceitunas.webp" alt="Aceitunas"></div>
+      <div class="marquee-item"><img src="img/mezclas.jfif" alt="Mezclas"></div>
+      <div class="marquee-item"><img src="img/tripas.jfif" alt="Tripas"></div>
+      <div class="marquee-item"><img src="img/dulcebatata.jpg" alt="Dulce de Batata"></div>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <h2 class="section-title">¿Qué estás buscando?</h2>
+    
+    <!-- Grid Categories (Bento Box style) -->
+    <div class="categories-grid" id="categoriesGrid">
+      <!-- Llenado por JS -->
+    </div>
+
+    <!-- Main Product List -->
+    <div class="product-feed">
+      <div id="productList" class="product-list">
+        <!-- Llenado por JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Bottom Floating Cart Button -->
+  <div class="floating-cart" id="floatingCartBtn">
+    <div class="cart-info">
+      <span class="cart-qty-badge" id="floatingCartQty">0</span>
+      <span class="cart-text">Ver pedido</span>
+    </div>
+    <span class="cart-total" id="floatingCartTotal">$ 0,00</span>
+  </div>
+
+  <!-- Checkout Modal (Bottom Sheet) -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Tu Pedido</h2>
+        <button type="button" class="close-btn" id="closeModalBtn">✕</button>
+      </div>
+      
+      <div class="modal-body">
+        <ul id="cartList" class="cart-list">
+          <!-- Llenado por JS -->
+        </ul>
+        
+        <div class="cart-summary">
+          <span>Total</span>
+          <strong id="cartTotalValue">$ 0,00</strong>
+        </div>
+        
+        <div class="checkout-form">
+          <h3>Datos para el Envío</h3>
+          <div class="form-group">
+            <label for="inputName">Nombre completo</label>
+            <input type="text" id="inputName" placeholder="Ej: Juan Pérez" />
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Dirección de envío (Opcional si retira)</label>
+            <input type="text" id="inputAddress" placeholder="Ej: San Martín 123, Tucumán" />
+          </div>
+          <div class="form-group">
+            <label for="inputNotes">Notas / Aclaraciones</label>
+            <textarea id="inputNotes" placeholder="Ej: Preferencia de horarios, dudas..."></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn-whatsapp" id="btnWhatsApp">
+          Enviar Pedido por WhatsApp
+        </button>
+        <button type="button" class="btn-clear" id="btnClearCart">Vaciar Carrito</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/app.js"></script>
 </body>
 </html>
